@@ -8,7 +8,7 @@ File Descriptions:
 
 /project_root:
 
-requirements.txt >>> List of Python libraries
+requirements.txt >>> List of Python libraries<br>
 import.py >>> Script to insert 'books.csv' data into the database
 create.sql >>> SQL statements to create the tables
 application.py >>> Flask Application
