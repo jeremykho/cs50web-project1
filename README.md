@@ -9,22 +9,22 @@ File Descriptions:
 /project_root:
 
 requirements.txt >>> List of Python libraries<br>
-import.py >>> Script to insert 'books.csv' data into the database
-create.sql >>> SQL statements to create the tables
-application.py >>> Flask Application
+import.py >>> Script to insert 'books.csv' data into the database<br>
+create.sql >>> SQL statements to create the tables<br>
+application.py >>> Flask Application<br>
 
 /templates:
 
-base.html >>> Headers and navbar for all HTML pages
-index.html >>> Homepage with search bar
-results.html >>> Search results
-book.html >>> Page with all info of specific book
-review.html >>> Form to write a review
-login.html >>> Login
-register.html >>> New user
-logout.html >>> Logout
+base.html >>> Headers and navbar for all HTML pages<br>
+index.html >>> Homepage with search bar<br>
+results.html >>> Search results<br>
+book.html >>> Page with all info of specific book<br>
+review.html >>> Form to write a review<br>
+login.html >>> Login<br>
+register.html >>> New user<br>
+logout.html >>> Logout<br>
 
 /static/stylesheets:
 
-custom.scss >>> SASS script for my custom CSS
+custom.scss >>> SASS script for my custom CSS<br>
 custom.css >>> compiled stylesheet from SASS
