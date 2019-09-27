@@ -1,4 +1,4 @@
-# Project 1
+# Project 1: Books
 
 CS50x: Web Programming with Python and JavaScript
 
