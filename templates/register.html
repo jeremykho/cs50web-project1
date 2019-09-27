@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="container container-center">
+  <div class="center">
+    <h1>Register</h1>
+    {% if error %}
+        <p style="color:red;">{{error}}</p>
+    {% endif %}
+    <form action="" method="post">
+      <!-- First name -->
+      <div class="form-group">
+        <!-- <label for="username"><b>Username</b></label> -->
+        <input type="text" class="form-control form-control-md" name="first_name" placeholder="First Name" required>
+      </div>
+      <!-- Last name -->
+      <div class="form-group">
+        <!-- <label for="username"><b>Username</b></label> -->
+        <input type="text" class="form-control form-control-md" name="last_name" placeholder="Last Name" required>
+      </div>
+      <!-- Username -->
+      <div class="form-group">
+        <!-- <label for="username"><b>Username</b></label> -->
+        <input type="text" class="form-control form-control-md" name="username" placeholder="Username" required>
+      </div>
+      <!-- Password -->
+      <div class="form-group">
+        <!-- <label for="password"><b>Password</b></label> -->
+        <input type="password" class="form-control form-control-md" name="password" placeholder="Password" required>
+      </div>
+      <!-- Submit -->
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-right">Submit</button>
+      </div>
+    </form>
+    <a href="{{ url_for('index')}}">Or Log In Now!</a>
+    </div>
+</div>
+
+{% endblock %}

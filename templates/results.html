@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block body %}
+  <div class="container">
+      <h2 class="top-margin">Search Results</h2><br><br>
+      {% for result in results %}
+        <a href="{{ url_for('book', isbn=result.isbn) }}">
+            <h4>{{ result.title }} ({{ result.year}}) by {{ result.author }}</h4>
+            ISBN: {{ result.isbn }}
+            <br><br>
+        </a>
+      {% endfor %}
+  </div>
+
+{% endblock %}

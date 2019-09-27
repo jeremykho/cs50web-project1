@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="container">
+  <h1>{{ book.title }}</h1>
+  <h2>by {{ book.author }}, {{ book.year }}</h2>
+  <p> ISBN: {{ book.isbn }}<p>
+    <form action="" method="post">
+      <!-- Rating -->
+      <div class="form-group col-2">
+        <label for="rating"><b>Rating</b></label>
+        <select class="form-control form-control-md" name="rating" value={{ review.rating }}>
+          <option value=1>1/5 Stars</option>
+          <option value=2>2/5 Stars</option>
+          <option value=3>3/5 Stars</option>
+          <option value=4>4/5 Stars</option>
+          <option value=5>5/5 Stars</option>
+        </select>
+      </div>
+
+      <!-- Review -->
+      <div class="form-group col-8">
+        <label for="content"><b>Detailed Review</b></label>
+        <textarea class="form-control form-control-md" rows=10 name="content">{{ review.content }}</textarea>
+      </div>
+
+      <!-- Submit -->
+      <div class="form-group col-8">
+        <button type="submit" class="btn btn-primary btn-right">Submit</button>
+      </div>
+</div>
+
+{% endblock %}

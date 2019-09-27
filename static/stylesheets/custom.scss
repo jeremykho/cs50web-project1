@@ -1,0 +1,81 @@
+// Custom.scss
+
+// Variable Overrides
+
+// Bootstrap and its default variables
+// @import "../bootstrap/scss/bootstrap";
+
+// Sass Variables
+$theme-mahogany: #42313a;
+$theme-chestnut: #6c2d2c;
+$theme-leather: #9f4636;
+$theme-parchment: #f1dcc9;
+$theme-font: "Helvetica";
+
+%set-width-to-parent {
+    width: 100%;
+    height: auto;
+}
+
+body {
+    // General theme
+    background-color: $theme-parchment;
+    color: $theme-mahogany;
+    font-family: $theme-font;
+
+    // Custom navbar style
+    .navbar{
+        background-color: $theme-chestnut;
+
+        .nav-link {
+            color:$theme-parchment;
+            position: relative;
+        }
+
+        .navbar-brand {
+            color:$theme-parchment;
+        }
+    }
+
+    a {
+      color: $theme-mahogany;
+    }
+
+    a:hover {
+      color: $theme-chestnut;
+    }
+
+    div.container-center {
+      height: 80vh;
+      position: relative;
+
+      .center {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .top-margin {
+      margin-top: 32px;
+    }
+
+    div.container div.section {
+      margin-top: 24px;
+      margin-bottom: 40px;
+    }
+
+    button.btn-primary {
+      background-color: $theme-chestnut;
+      border-color: $theme-chestnut;
+    }
+
+    button.btn-primary:hover {
+      background-color: $theme-leather;
+      border-color: $theme-leather;
+    }
+
+}

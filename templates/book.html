@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+  <div class="container">
+    <div class="top-margin section">
+      <h1>{{ book.title }}</h1>
+      <h2>by {{ book.author }}, {{ book.year }}</h2>
+      <p> ISBN: {{ book.isbn }}<p>
+      <h5>Goodreads Rating: {{ gr_avg }} / 5 stars from {{ gr_count }} reviews</h5>
+    </div>
+
+    <div class="section">
+      {% if review %}
+        <h4>Your Review: {{ review.rating }} / 5.0 Stars</h4>
+        <p style="white-space: pre-line;">{{ review.content }}</p>
+        <a class="hlink" href="{{ url_for('review', isbn=book.isbn) }}">Edit your review</a>
+      {% else %}
+        <a href="{{ url_for('review', isbn=book.isbn) }}">Submit a Review!</a>
+      {% endif %}
+    </div>
+
+    {% if reviews %}
+    <div class="section">
+      <h4><u>Reviews from Other Users</u></h4>
+      {% for review in reviews %}
+        <h5>{{ review.first_name }} {{ review.last_name }}: {{ review.rating }} / 5.0 Stars</h5>
+        <p style="white-space: pre-line;">{{ review.content }}</p>
+        <br><br>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+
+{% endblock %}

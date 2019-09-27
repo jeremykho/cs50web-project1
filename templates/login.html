@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block body %}
+<!-- <div class="jumbotron vertical-center"> -->
+  <div class="container container-center">
+    <div class="center">
+      <h1>Login</h1>
+      {% if error %}
+          <p style="color:red;">{{error}}</p>
+      {% endif %}
+        <form action="" method="post">
+            <!-- Username -->
+            <div class="form-group">
+              <input type="text" class="form-control form-control-lg" name="username" placeholder="Username">
+            </div>
+            <!-- Password -->
+            <div class="form-group">
+              <input type="password" class="form-control form-control-lg" name="password" placeholder="Password">
+            </div>
+            <!-- Submit -->
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-right">Submit</button>
+            </div>
+        </form>
+        <a href="{{ url_for('register')}}">Or Sign Up Now!</a>
+</div>
+</div>
+<!-- </div> -->
+
+{% endblock %}

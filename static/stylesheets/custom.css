@@ -1,0 +1,50 @@
+body {
+  background-color: #f1dcc9;
+  color: #42313a;
+  font-family: "Helvetica";
+}
+body .navbar {
+  background-color: #6c2d2c;
+}
+body .navbar .nav-link {
+  color: #f1dcc9;
+  position: relative;
+}
+body .navbar .navbar-brand {
+  color: #f1dcc9;
+}
+body a {
+  color: #42313a;
+}
+body a:hover {
+  color: #6c2d2c;
+}
+body div.container-center {
+  height: 80vh;
+  position: relative;
+}
+body div.container-center .center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+body .top-margin {
+  margin-top: 32px;
+}
+body div.container div.section {
+  margin-top: 24px;
+  margin-bottom: 40px;
+}
+body button.btn-primary {
+  background-color: #6c2d2c;
+  border-color: #6c2d2c;
+}
+body button.btn-primary:hover {
+  background-color: #9f4636;
+  border-color: #9f4636;
+}
+
+/*# sourceMappingURL=custom.css.map */

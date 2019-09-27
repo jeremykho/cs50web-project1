@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block body %}
+  <div class="container container-center">
+    <div class="center col-10">
+      <form action="{{ url_for('results') }}" method="post">
+        <div class="form-row center-object justify-content-center">
+          <div class="form-group col-offset-2 col-8">
+            <label for="searchInput"><b>Hi {{ name }}! Search for a book!</b></label>
+            <input type="text" class="form-control form-control-lg" id="searchInput" name="query" placeholder="The Hobbit by J. R. R. Tolkien">
+          </div>
+          <div class="form-group col-offset-2 col-8">
+            <button type="submit" class="btn btn-primary btn-right">Search</button>
+          </div>
+        </div>
+      </form>
+      </div>
+  </div>
+
+{% endblock %}
