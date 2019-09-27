@@ -6,6 +6,8 @@ from flask_session import Session
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 
+from passlib.hash import sha256_crypt
+
 app = Flask(__name__)
 
 # Check for environment variable
@@ -60,7 +62,7 @@ def register():
         # Add new user
         first_name = request.form.get("first_name")
         last_name = request.form.get("last_name")
-        password = request.form.get("password")
+        password = sha256_crypt.encrypt(request.form.get("password"))
         db.execute("INSERT INTO users (first_name, last_name, username, password) \
                     VALUES (:first_name, :last_name, :username, :password)",
                     {"first_name":first_name, "last_name":last_name, "username":username, "password":password})
@@ -78,10 +80,14 @@ def login():
     if request.method == 'POST':
         # Check login details
         username = request.form.get("username")
-        password = request.form.get("password")
-        user = db.execute("SELECT * FROM users WHERE username = :username AND password = :password",
-            {"username": username, "password": password}).fetchone()
+        user = db.execute("SELECT id, password FROM users WHERE username = :username",
+            {"username": username}).fetchone()
+        # Check if user exists
         if user is None:
+            return render_template("login.html", error="Invalid username/password.")
+        # Check if password is correct
+        correct_password = sha256_crypt.verify(request.form.get("password"), user.password)
+        if not correct_password:
             return render_template("login.html", error="Invalid username/password.")
         # Store user info
         session['user_id'] = user['id']
